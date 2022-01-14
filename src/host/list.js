@@ -18,11 +18,12 @@ export const execute = async () => {
                 row.path,
                 row.client,
                 row.php,
+                row.ssl,
                 alias.join('')
             ];
         });
         var header = [
-            'Host', 'User', 'Path', 'Client', 'PHP', 'Alias'
+            'Host', 'User', 'Path', 'Client', 'PHP', 'SSL', 'Alias',
         ].map(text => chalk.bold(text));
         process.stdout.write(
             table([ header, ...rows ], {
