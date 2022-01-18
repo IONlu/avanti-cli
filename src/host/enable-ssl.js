@@ -16,7 +16,7 @@ export const execute = async (options) => {
         } else {
             host = await Host.get(options.host);
         }
-        await host.createSsl(options['create-ssl']);
+        await host.enableSsl(options['enable-ssl']);
     } catch(e) {
         process.exitCode = 1;
         process.stderr.write(chalk.red(chalk.bold('ERROR:') + ' ' + e) + '\n');
