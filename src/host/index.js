@@ -57,6 +57,15 @@ export const options = {
         describe: 'remove ftp account',
         type: 'boolean'
     },
+    'enable-ssl': {
+        generate: 'ssl',
+        describe: 'Enable ssl for host [dns | apache | manual]',
+        type: 'string'
+    },
+    'disable-ssl': {
+        describe: 'Disable ssl from host',
+        type: 'boolean'
+    },
 };
 
 export const handle = (argv, yargs) => {
@@ -66,7 +75,8 @@ export const handle = (argv, yargs) => {
         'php',
         'set-option', 'remove-option',
         'refresh',
-        'create-ftp', 'remove-ftp'
+        'create-ftp', 'remove-ftp',
+        'enable-ssl', 'disable-ssl'
     ];
     for (let i = 0; i < actions.length; i++) {
         if (argv[actions[i]]) {
