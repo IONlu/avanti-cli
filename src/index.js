@@ -7,6 +7,7 @@ import corePackage from 'avanti-core/package.json';
 import * as Client from './client';
 import * as Host from './host';
 import * as Task from './task';
+import * as Server from './server';
 
 const handleError = err => {
     process.exitCode = 1;
@@ -46,6 +47,7 @@ try {
             .command(Client.command, Client.description, Client.options, handleCommand(Client, yargs))
             .command(Host.command, Host.description, Host.options, handleCommand(Host, yargs))
             .command(Task.command, Task.description, Task.options, handleCommand(Task, yargs))
+            .command(Server.command, Server.description, Server.options, handleCommand(Server, yargs))
 
             .recommendCommands()
             .help()
